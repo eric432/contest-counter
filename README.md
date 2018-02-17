@@ -1,2 +1,2 @@
 # contest-counter
-Simple flat file counter. click button saves count to txt file. 
+Simple flat file counter. Click a button to save count to txt file. 
