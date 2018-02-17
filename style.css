@@ -1,0 +1,11 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+#counter {
+  margin: 1em 0;
+  font-size: 2.5em;
+}
+.count-trigger {
+  font-size: 1.5em;
+}
