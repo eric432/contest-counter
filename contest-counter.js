@@ -10,10 +10,16 @@ $(function() {
   // Display the count
   var view = {
     displayCount: function() {
-      jQuery.get('counter.txt', function(data) {
-        var currentCount = numberWithCommas(data);
+
+      $('#counter').load("counter.txt", function(data, statusTxt, xhr) {
+        if (statusTxt == "success")
+          var currentCount = numberWithCommas(data);
         $('#counter').html(currentCount);
-      });
+        if (statusTxt == "error")
+          alert("Error: " + xhr.status + ": " + xhr.statusText);
+        }
+      );
+
     }
   };
   view.displayCount();
@@ -24,6 +30,7 @@ $(function() {
     $.ajax({
       url: 'counter.php',
       type: 'POST',
+      cache: false,
       data: {
         data: data
       },
